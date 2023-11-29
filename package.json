@@ -1,0 +1,25 @@
+{
+  "name": "programming_hero_university_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "buid": "tsc",
+    "start": "node dest/app/server.js",
+    "start-dev": "tsnd src/app/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.2",
+    "node": "^21.2.0",
+    "typescript": "^5.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
+  }
+}
