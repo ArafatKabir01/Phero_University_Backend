@@ -1,4 +1,4 @@
-import config from "../../../config";
+import config from "../../config";
 import { TStudent } from "../student/student.interface";
 import { Student } from "../student/student.model";
 import { TUser } from "./user.interface";
@@ -9,6 +9,7 @@ const createStudent = async function (password: string, studentData: TStudent) {
   userData.password = password || config.default_pass;
   userData.id = "20230021";
   userData.role = "student";
+  userData.email = studentData?.email;
 
   const newUser = await User.create(userData);
 
