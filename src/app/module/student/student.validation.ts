@@ -20,8 +20,8 @@ const guardianSchema = z.object({
 });
 
 const localGuardianSchema = z.object({
-  name: userNameSchema.required(),
-  phoneNomber: z.string().optional(),
+  name: userNameSchema.required().optional(),
+  phoneNomber: z.string(),
 });
 
 const studentZodValidationSchema = z.object({
@@ -33,7 +33,7 @@ const studentZodValidationSchema = z.object({
       phoneNumber: z.string().optional(),
       email: z.string().email(),
       gender: z.enum(["male", "female"]).default("male"),
-      dateOfBirth: z.number().optional(),
+      dateOfBirth: z.string().optional(),
       bloodGroup: z
         .enum(["A+", "B+", "A-", "B-", "O+", "O-", "AB+", "AB-"])
         .optional(),

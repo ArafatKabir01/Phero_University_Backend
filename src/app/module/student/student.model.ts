@@ -11,7 +11,6 @@ const userNameSchema = new Schema<Username>({
   firstName: {
     type: String,
     required: [true, "First name is required"],
-    maxlength: [20, "First name in maximum 20 cheracter"],
     trim: true,
   },
   middlename: { type: String, required: false },
@@ -42,12 +41,13 @@ const studentSchema = new Schema<TStudent>({
   id: {
     type: String,
     unique: true,
+    required: false,
     message: "ID already exists",
   },
   user: {
     type: Schema.Types.ObjectId,
     unique: true,
-    required: true,
+    required: false,
     message: "ID already exists",
   },
   name: {

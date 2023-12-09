@@ -6,6 +6,7 @@ import { User } from "./user.model";
 
 const createStudent = async function (password: string, studentData: TStudent) {
   const userData: Partial<TUser> = {};
+  console.log(studentData)
   userData.password = password || config.default_pass;
   userData.id = "20230021";
   userData.role = "student";
@@ -13,7 +14,7 @@ const createStudent = async function (password: string, studentData: TStudent) {
 
   const newUser = await User.create(userData);
 
-  if (Object.keys(newUser).length) {
+  if (Object.keys(newUser).length && studentData) {
     studentData.id = newUser.id;
     studentData.user = newUser._id;
     const newStudent = await Student.create(studentData);
