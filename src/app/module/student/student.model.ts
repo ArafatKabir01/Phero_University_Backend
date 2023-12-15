@@ -6,6 +6,7 @@ import {
   TStudent,
   Username,
 } from "./student.interface";
+import { date } from "zod";
 //Schema
 const userNameSchema = new Schema<Username>({
   firstName: {
@@ -66,7 +67,7 @@ const studentSchema = new Schema<TStudent>({
     required: [true, "Gender is required"],
     default: "male",
   },
-  dateOfBirth: Number,
+  dateOfBirth: {type: Date},
   bloodGroup: {
     type: String,
     enum: ["A+", "B+", "A-", "B-", "O+", "O-", "AB+", "AB-"],

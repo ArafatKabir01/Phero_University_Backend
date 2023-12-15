@@ -25,7 +25,7 @@ export interface TStudent {
   phoneNumber: string;
   email: string;
   gender: "male" | "female";
-  dateOfBirth: number;
+  dateOfBirth: Date;
   bloodGroup: "A+" | "B+" | "A-" | "B-" | "O+" | "O-" | "AB+" | "AB-";
   guardian: Guardian;
   localGuardian: LocalGuardian;

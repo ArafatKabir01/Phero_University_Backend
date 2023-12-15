@@ -33,7 +33,7 @@ const studentZodValidationSchema = z.object({
       phoneNumber: z.string().optional(),
       email: z.string().email(),
       gender: z.enum(["male", "female"]).default("male"),
-      dateOfBirth: z.string().optional(),
+      dateOfBirth: z.date().optional(),
       bloodGroup: z
         .enum(["A+", "B+", "A-", "B-", "O+", "O-", "AB+", "AB-"])
         .optional(),
