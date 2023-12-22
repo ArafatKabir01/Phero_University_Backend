@@ -29,5 +29,6 @@ export interface TStudent {
   bloodGroup: "A+" | "B+" | "A-" | "B-" | "O+" | "O-" | "AB+" | "AB-";
   guardian: Guardian;
   localGuardian: LocalGuardian;
+  admissionSemester:string
   profileImg: string;
 }

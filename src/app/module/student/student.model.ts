@@ -74,6 +74,7 @@ const studentSchema = new Schema<TStudent>({
   },
   guardian: guardian,
   localGuardian: localGuardian,
+  admissionSemester:String,
   profileImg: String,
 });
 

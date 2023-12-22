@@ -1,13 +1,14 @@
 import express, { Router } from 'express'
 import validateRequest from '../../middleware/validateRequest'
-import { AcademicSemestervalidation } from './academicSemesetr.validation'
-import { academicSemesterController } from './acadamicSemester.controller'
+import { AcademicSemesterValidation } from './academicSemesetr.validation'
+import { academicSemesterController } from './academicSemester.controller'
 
 const academicSemesterRouter = express.Router()
 
-academicSemesterRouter.post('/create-academic-semester' ,validateRequest(AcademicSemestervalidation.academicSemesterValidationSchema) , academicSemesterController.createSemesterIntoDb)
+academicSemesterRouter.post('/create-academic-semester' ,validateRequest(AcademicSemesterValidation.academicSemesterValidationSchema) , academicSemesterController.createSemesterIntoDb)
 
 academicSemesterRouter.get('/get-academic-semester' ,academicSemesterController.getSemesterIntoDb)
-academicSemesterRouter.patch('/update-academic-semester/:semesterId' ,academicSemesterController.updateAcademicSemesterInfo)
+academicSemesterRouter.get('/get-academic-semester/:id' ,academicSemesterController.getSingleSemesterIntoDb)
+academicSemesterRouter.patch('/update-academic-semester/:semesterId' ,validateRequest(AcademicSemesterValidation.updateAcademicSemesterValidationSchema) ,academicSemesterController.updateAcademicSemesterInfo)
 
 export default academicSemesterRouter

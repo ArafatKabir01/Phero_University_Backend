@@ -1,7 +1,7 @@
 import express from "express";
 import studentRoute from "../module/student/student.router";
 import userRoute from "../module/user/user.router";
-import { academicSemesterCode } from "../module/academicSemester/academicSemester.constant";
+
 import academicSemesterRouter from "../module/academicSemester/academicSemesetr.router";
 
 const router = express.Router();
